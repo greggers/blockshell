@@ -1,4 +1,4 @@
-Modified version of <a href="https://github.com/daxeel/blockshell"> target="_blank">Blockshell</a> which uses python3 instead of python.
+Modified version of <a href="https://github.com/daxeel/blockshell" target="_blank">Blockshell</a> which uses python3 instead of python.
 
 <img src="https://img.shields.io/david/dev/expressjs/express.svg"> [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=https%3A%2F%2Ftwitter.com%2Fintent%2Ftweet%3Ftext%3DLearn%20blockchain%2020%20minutes%20-%20https%3A%2F%2Fgithub.com%2Fdaxeel%2Fblockshell)
 
