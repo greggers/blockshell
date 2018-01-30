@@ -18,10 +18,10 @@ class Block:
 
     def calculateHash(self):
         hashData = str(self.index) + str(self.data) + self.timestamp + self.previousHash + str(self.nonce)
-        return hashlib.sha256(hashData).hexdigest()
+        return hashlib.sha256(hashData.encode('utf-8')).hexdigest()
 
     def mineBlock(self, difficulty):
-        print Back.RED + "\n[Status] Mining block (" + str(self.index) + ") with PoW ..."
+        print (Back.RED + "\n[Status] Mining block (" + str(self.index) + ") with PoW ...")
         startTime = time.time()
 
         while self.hash[:difficulty] != "0"*difficulty:
@@ -31,9 +31,9 @@ class Block:
             sys.stdout.flush()
 
         endTime = time.time()
-        print Back.BLUE + "[ Info ] Time Elapsed : " + str(endTime - startTime) + " seconds."
-        print Back.BLUE + "[ Info ] Mined Hash : " + self.hash
-        print Style.RESET_ALL
+        print (Back.BLUE + "[ Info ] Time Elapsed : " + str(endTime - startTime) + " seconds.")
+        print (Back.BLUE + "[ Info ] Mined Hash : " + self.hash)
+        print (Style.RESET_ALL)
 
 class Blockchain:
     def __init__(self):
@@ -51,7 +51,7 @@ class Blockchain:
         self.writeBlocks()
 
     def writeBlocks(self):
-        dataFile = file("chain.txt", "w")
+        dataFile = open("chain.txt", mode="w")
         chainData = []
         for eachBlock in self.chain:
             chainData.append(eachBlock.__dict__)
